@@ -1,17 +1,12 @@
 #include <iostream>
-#include "critter.h"
+#include <cstdlib>
+#include "horse.h"
 
 Horse::Horse(){
-  Horse::position = 0;
-  Horse::index = 0;
-  Horse::trackLength = 15;
+  position = 0;
+  index = 0;
+  trackLength = 15;
 } // end constructor
-
-void Horse::init(int index, int trackLength){
-  Horse::position = 0
-  Horse::index = index
-  Horse::trackLength = trackLength
-} // end init
 
 void Horse::advance(){
   int coin = rand() % 2;
@@ -19,10 +14,10 @@ void Horse::advance(){
 } // end advance
 
 void Horse::printLane(){
-  for (int i = 0, i < trackLength; i++){
-    if (i == Horse::position){
+  for (int pos  = 0; pos < trackLength; pos++){
+    if (pos == Horse::position){
       std::cout << Horse::index;
-    } else{
+    } else {
       std::cout << ".";
     } // end if
   } // end for loop
@@ -33,8 +28,8 @@ void Horse::printLane(){
 bool Horse::isWinner(){
   bool result = false;
   if (position >= trackLength){
-    result = true
-    std::cout << "Horse " << Horse::index << " is the winner" << std::endl;
+    result = true;
+    std::cout << "Horse " << index << " is the winner" << std::endl;
   } // end if
   return result;
 } // end isWinner
