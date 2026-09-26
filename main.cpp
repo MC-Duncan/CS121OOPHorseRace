@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include "race.h"
 #include "horse.h"
 
 void testHorse();
@@ -8,8 +9,10 @@ void testHorse();
 int main(){
   srand(time(NULL));
   std::cout << "Race Game" << std::endl;
-  testHorse();
   
+  Race r;
+  r.start();
+
   return 0;
 } // end main
 

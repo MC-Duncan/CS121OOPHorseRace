@@ -4,7 +4,7 @@
 
 #include "horse.h"
 
-class Horse {
+class Race {
 	private:
 		int NUM_HORSES
 		int TRACK_LENGTH
