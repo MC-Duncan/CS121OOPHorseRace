@@ -5,7 +5,7 @@
 class Horse {
   private:
     int position;
-    int index;
+    int name;
     int trackLength;
 
   public:
@@ -14,6 +14,8 @@ class Horse {
     void advance();
     void printLane();
     bool isWinner();
+    int getName();
+    void setName(int index);
 }; // end class def
 
 #endif

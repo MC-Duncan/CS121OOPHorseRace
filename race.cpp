@@ -4,25 +4,25 @@
 #include <cstdlib>
 #include <ctime>
 
-Race::Race(){
-  const static int NUM_HORSES = 5;
-  const int TRACK_LENGTH = 15;
-
-  int horses[NUM_HORSES];
+Race::Race(){  
+  TRACK_LENGTH = 15;
+  // random generator already seeded in main
   for (int i = 0; i < NUM_HORSES; ++i) {
-    horses[i] = Horse(i, TRACK_LENGTH)
+    horses[i] = Horse();
+    horses[i].init(i, TRACK_LENGTH);
+  } // end for
 } // end constructor
 
-void Racewadw::start(){
-  Horse h;
-  bool keepGoing = trueiii
+void Race::start(){
+  bool keepGoing = true;
   while (keepGoing){
     for (int i = 0; i < NUM_HORSES; i++) {
-      h.advance();
-      h.printLane();
-      if (h.isWinner()){
+      horses[i].advance();
+      horses[i].printLane();
+      if (horses[i].isWinner()){
         keepGoing = false;
       } // end if
     } // end for
+    std::cout << "End of turn" << std::endl;
   } // end while
 } // end start
